@@ -8,8 +8,8 @@ function App() {
 
   return (
     <>
-      <h1>Hola</h1>
-      <Componente />
+      {/* <h1>Hola</h1> */}
+      {/* <Componente /> */}
       <NamedComponent />
     </>
   )

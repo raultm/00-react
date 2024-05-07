@@ -10,13 +10,7 @@ const fecha = new Date()
 export const NamedComponent = () => {
   return (
     <>
-    {nombre}
-    {numero}
-    {array}
-    {boolean}
-    {fn()}
-    {objeto.nombre}
-    {JSON.stringify(fecha)}
+    <h1>{nombre}</h1>
     </>
   )
 }
