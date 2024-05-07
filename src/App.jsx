@@ -1,12 +1,14 @@
 import { useState } from 'react'
-import { Character } from './components/Character'
+import { CharactersList } from './components/CharactersList'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-    <Character/>
+      <main className='flex flex-col items-center'>
+        <CharactersList />
+      </main>
     </>
   )
 }
