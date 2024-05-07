@@ -3,11 +3,8 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 
-const Pepito = () => <h1>Hola</h1>
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Pepito />
     <App />
   </React.StrictMode>,
 )
