@@ -1,3 +1,14 @@
+export const api = {
+
+  baseUrl: "https://rickandmortyapi.com/api/character",
+
+  characters: async () => {
+    let response = await fetch("https://rickandmortyapi.com/api/character?page=10")
+    return await response.json()
+  }
+
+}
+
 export const character = {
   "id": 2,
   "name": "Morty Smith",
@@ -32,7 +43,7 @@ export const characters = {
   "results": [
       {
           "id": 1,
-          "name": "Rick Sanchez",
+          "name": "Ricky Sanchez",
           "status": "Alive",
           "species": "Human",
           "type": "",
