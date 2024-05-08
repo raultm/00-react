@@ -1,8 +1,6 @@
-
-export const nombre = "Rick Sánchez"
-export const especie = "Humano"
-
-export const Character = ({ nombre, especie, src}) => {
+import { FaDiceD20 } from "react-icons/fa";
+ 
+export const Character = ({ showIcon, nombre, especie, src}) => {
 
     return (
         <>
@@ -19,6 +17,11 @@ export const Character = ({ nombre, especie, src}) => {
                         <p className="px-6 py-2 text-xs font-thin text-gray-700 dark:text-gray-50">
                             {especie}
                         </p>
+                        { showIcon ?
+                        <div className="absolute bottom-14 right-5">
+                            <FaDiceD20 color="gold"/>
+                        </div>
+                        : null}
                     </div>
                 </div>
             </div>

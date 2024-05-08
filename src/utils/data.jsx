@@ -1,9 +1,9 @@
-export const api = {
+export let api = {
 
   baseUrl: "https://rickandmortyapi.com/api/character",
 
   characters: async () => {
-    let response = await fetch("https://rickandmortyapi.com/api/character?page=10")
+    let response = await fetch(`https://rickandmortyapi.com/api/character?page=${Math.floor(Math.random(1,20)*10)}`)
     return await response.json()
   }
 
