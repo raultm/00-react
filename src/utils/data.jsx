@@ -2,8 +2,8 @@ export let api = {
 
   baseUrl: "https://rickandmortyapi.com/api/character",
 
-  characters: async () => {
-    let response = await fetch(`https://rickandmortyapi.com/api/character?page=${Math.floor(Math.random(1,20)*10)}`)
+  characters: async (page) => {
+    let response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
     return await response.json()
   }
 
@@ -43,7 +43,7 @@ export const characters = {
   "results": [
       {
           "id": 1,
-          "name": "Ricky Sanchez",
+          "name": "Rick Sanchez",
           "status": "Alive",
           "species": "Human",
           "type": "",

@@ -1,6 +1,14 @@
 import { FaDiceD20 } from "react-icons/fa";
- 
-export const Character = ({ showIcon, nombre, especie, src}) => {
+
+export const Character = ({ showIcon = false, nombre, especie, src }) => {
+
+    const handleViewCharacter = (e) => {
+        console.log(e)
+    }
+
+    const handleHover = (e) => {
+        console.log(e)
+    }
 
     return (
         <>
@@ -9,7 +17,7 @@ export const Character = ({ showIcon, nombre, especie, src}) => {
                     <div className="flex flex-col justify-between h-full">
                         <img src={src} alt="Imagen"></img>
                         <p className="absolute text-sm italic text-gray-800 dark:text-white top-2 right-2">
-                            
+
                         </p>
                         <p className="mt-4 text-lg text-gray-900 dark:text-white">
                             {nombre}
@@ -17,11 +25,17 @@ export const Character = ({ showIcon, nombre, especie, src}) => {
                         <p className="px-6 py-2 text-xs font-thin text-gray-700 dark:text-gray-50">
                             {especie}
                         </p>
-                        { showIcon ?
-                        <div className="absolute bottom-14 right-5">
-                            <FaDiceD20 color="gold"/>
-                        </div>
-                        : null}
+                        <button type="button" 
+                            onClick={handleViewCharacter}
+                            className="py-2 px-4  bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg ">
+                            Ver
+                        </button>
+                        {showIcon ?
+                            <div className="absolute bottom-16 right-5">
+                                <FaDiceD20 color="gold" onMouseOver={handleHover}/>
+                            </div>
+                            : null}
+
                     </div>
                 </div>
             </div>
