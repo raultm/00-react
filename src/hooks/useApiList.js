@@ -8,9 +8,9 @@ export const  useApiList= (list) => {
 
     useEffect(() => { fetchCharacters() }, [page])
 
-    useEffect(() => { console.log(charactersList) }, [charactersList])
+    // useEffect(() => { console.log(charactersList) }, [charactersList])
 
-    const fetchCharacters = async () => { setCharactersList( (await api.characters(page)).results ) }
+    const fetchCharacters = async () => { setCharactersList( await api.characters(page) ) }
 
     const handleSiguienteClick = () => { setPage(prevPage => prevPage + 1) }
 

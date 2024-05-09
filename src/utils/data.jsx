@@ -4,7 +4,7 @@ export let api = {
 
   characters: async (page) => {
     let response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`)
-    return await response.json()
+    return (await response.json()).results
   }
 
 }
