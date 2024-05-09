@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
 import { api } from "../utils/data"
 
-export const  useApiList= (list) => {
+export const  useApiList= (fn) => {
   
-    const [charactersList, setCharactersList] = useState(list);
+    const [charactersList, setCharactersList] = useState([]);
     const [page, setPage] = useState(1);
 
     useEffect(() => { fetchCharacters() }, [page])
 
     // useEffect(() => { console.log(charactersList) }, [charactersList])
 
-    const fetchCharacters = async () => { setCharactersList( await api.characters(page) ) }
+    const fetchCharacters = async () => { setCharactersList( await fn(page) ) }
 
     const handleSiguienteClick = () => { setPage(prevPage => prevPage + 1) }
 

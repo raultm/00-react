@@ -1,13 +1,14 @@
 import { Character } from "./Character"
 import { useApiList } from "../hooks/useApiList"
 import { useEffect } from "react"
+import { api } from "../utils/data"
 
 
 export const CharactersList = () => {
 
     //const {charactersList, page, handleAnteriorClick, handleSiguienteClick} = useApiList([])
 
-    const apilist = useApiList([])
+    const apilist = useApiList(api.characters)
     
     useEffect(() => {
       console.log(apilist.page)
